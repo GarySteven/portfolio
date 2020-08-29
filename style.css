@@ -198,6 +198,7 @@ a:hover {
     padding: 20px;
     padding-top: 100px;
     width: 95%;
+
   @include media-breakpoint-only(lg) {
     column-count: 3;
   }
