@@ -8,14 +8,14 @@ body {
     width: 100%;
     margin: 0;
     padding: 0;
-    font-family: 'Libre Caslon Display', serif;
+    font-family: 'Bebas Neue', cursive;
     color: black;
     z-index: 10;
     /* border: dashed green 3px; */
 }
 
 h1, h2, h3, h4, h5 {
-    font-family: 'Libre Caslon Display', serif;
+    font-family: 'Bebas Neue', cursive;
 }
 
 a:link {
@@ -77,7 +77,12 @@ a:hover {
     margin-right:auto;
 }
 
-
+a.anchor {
+    display: block;
+    position: relative;
+    top: 100;
+    visibility: hidden;
+}
 
 @media only screen and (max-width:600px) {
     nav. {
@@ -102,6 +107,10 @@ a:hover {
   background-repeat: no-repeat;
   background-size: cover;
   position:relative;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
 }
 
 .hero-text {
@@ -147,10 +156,27 @@ a:hover {
     /* height:80vh; */
     margin: 0;
     padding: 0;
+    /* border: solid blue 2px; */
 }
 
 .container-section > image-fade {
     max-height: 50vh;
+}
+
+
+
+.parallax {
+  /* The image used */
+  background-image: url("img/contact.jpg");
+
+  /* Full height */
+  height: 50%;
+
+  /* Create the parallax scrolling effect */
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .text-box {
@@ -176,11 +202,11 @@ a:hover {
     width: 100%;
     padding-top: 25px;
     padding-bottom: 25px;
-    background-color: white;
+    background-color: lightgrey;
     position:sticky;
     top: 50px;
     z-index: 9990;
-    /* border: dashed red 3px; */
+    /* border: dashed red 3px;  */
 }
 
 .text-body {
@@ -391,4 +417,177 @@ a:hover {
 .data_vis_small:hover {
     transform: scale(1.4);
     z-index: 9999;
+}
+
+#contact-form {
+    width: 75%;
+    height: 75%;
+    padding-top: 40px;
+    margin-left: 40%;
+    background-color: none;
+    /* opacity: .5; */
+}
+
+#contact {
+    background-color: lightgrey;
+}
+
+.fas{
+    padding: 20px;
+    color: lightgrey;
+}
+
+
+
+.front_heading {
+  position: relative;
+  font-family: 'Bebas Neue', cursive;
+  text-transform: uppercase;
+  font-size: 2em;
+  letter-spacing: 4px;
+  overflow: hidden;
+  background: linear-gradient(90deg, #000, #fff, #000);
+  background-repeat: no-repeat;
+  background-size: 80%;
+  animation: animate 3s linear 1;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: rgba(255, 255, 255, 0);
+}
+
+@keyframes animate {
+  0% {
+    background-position: -500%;
+  }
+  100% {
+    background-position: 500%;
+  }
+}
+
+/* Timeline */
+/* The actual timeline (the vertical ruler) */
+.timeline {
+  position: relative;
+  max-width: 1200px;
+  margin: 0 auto;
+  top: 0;
+  padding-top: 14vh;
+  padding-bottom: 14vh;
+}
+
+/* The actual timeline (the vertical ruler) */
+.timeline::after {
+  content: '';
+  position: absolute;
+  width: 3px;
+  background-color: black;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  margin-left: -3px;
+}
+
+/* Container around content */
+.tl-container {
+  padding: 10px 40px;
+  position: relative;
+  background-color: inherit;
+  width: 50%;
+}
+
+/* The circles on the timeline */
+.tl-container::after {
+  content: '';
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  right: -11px;
+  background-color: lightgrey;
+  border: 4px solid #294421;
+  top: 15px;
+  border-radius: 50%;
+  z-index: 1;
+}
+
+/* Place the container to the left */
+.left {
+  left: 0;
+}
+
+/* Place the container to the right */
+.right {
+  left: 50%;
+}
+
+/* Add arrows to the left container (pointing right) */
+.left::before {
+  content: " ";
+  height: 0;
+  position: absolute;
+  top: 22px;
+  width: 0;
+  z-index: 1;
+  right: 30px;
+  border: medium solid lightgray;
+  border-width: 10px 0 10px 10px;
+  border-color: transparent transparent transparent lightgray;
+}
+
+/* Add arrows to the right container (pointing left) */
+.right::before {
+  content: " ";
+  height: 0;
+  position: absolute;
+  top: 22px;
+  width: 0;
+  z-index: 1;
+  left: 30px;
+  border: medium solid lightgray;
+  border-width: 10px 10px 10px 0;
+  border-color: transparent lightgray transparent transparent;
+}
+
+/* Fix the circle for containers on the right side */
+.right::after {
+  left: -14px;
+}
+
+/* The actual content */
+.content {
+  padding: 20px 30px;
+  background-color: lightgray;
+  position: relative;
+  border-radius: 6px;
+}
+
+/* Media queries - Responsive timeline on screens less than 600px wide */
+@media screen and (max-width: 600px) {
+  /* Place the timelime to the left */
+  .timeline::after {
+  left: 31px;
+  }
+
+  /* Full-width containers */
+  .tl-container {
+  width: 100%;
+  padding-left: 70px;
+  padding-right: 25px;
+  }
+
+  /* Make sure that all arrows are pointing leftwards */
+  .tl-container::before {
+  left: 60px;
+  border: medium solid white;
+  border-width: 10px 10px 10px 0;
+  border-color: transparent white transparent transparent;
+  }
+
+  /* Make sure all circles are at the same spot */
+  .left::after, .right::after {
+  left: 15px;
+  }
+
+  /* Make all right containers behave like the left ones */
+  .right {
+  left: 0%;
+  }
 }
