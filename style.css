@@ -398,7 +398,10 @@ a.anchor {
 /* On devices with no hover facility, make text/link visible on page load instead. */
 @media screen and (hover: none) {
     .container-fade .image-fade {
-      opacity: 0.3;
+      opacity: .3;
+    }
+    .container-fade .middle {
+      opacity: 1;
     }
 }
 
