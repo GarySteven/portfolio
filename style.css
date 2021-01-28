@@ -395,6 +395,14 @@ a.anchor {
     font-size: 1vw;
 }
 
+/* On devices with no hover facility, make text/link visible on page load instead. */
+@media screen and (hover: none) {
+    .container-fade .image-fade {
+      opacity: 0.3;
+    }
+}
+
+
 .data_vis_large {
     width: 35vw;
     border: solid lightgrey 1px;
@@ -658,6 +666,6 @@ a.anchor {
 @media screen and (max-width: 768px){
 	.rw-sentence { font-size: 18px; }
 }
-@media screen and (max-width: 320px){
+@media screen and (max-width: 400px){
 	.rw-sentence { font-size: 9px; }
 }
